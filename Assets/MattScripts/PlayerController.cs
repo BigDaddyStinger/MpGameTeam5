@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,26 +13,30 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Collider[] col;
 
+
+
     public LayerMask thisIsGround;
 
     private Vector2 moveInput;
 
-    public float moveSpeed = 5f;
 
-    public bool isGrounded;
+
+    [SerializeField] float moveSpeed = 5f;
+
+    [SerializeField] bool isGrounded;
 
 
     void OnEnable()
     {
         _playerControls.Enable();
+        _playerControls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        _playerControls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
     }
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _playerControls = new PlayerControl();
-        _playerControls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        _playerControls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
     }
 
     void Start()
