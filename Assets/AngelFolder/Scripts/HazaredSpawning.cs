@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class HazaredSpawning : MonoBehaviour
 {
+    [Header("Fly Modifiers")]
     [SerializeField] float flyingSpeed = 3.5f;
     [SerializeField] float flyingTime = 3.5f;
+    [Header("Size Modifiers")]
+    [SerializeField] float SizeMin = 1f;
+    [SerializeField] float SizeMax = 5f;
     Vector3 movement;
     private void Awake()
     {
@@ -18,7 +22,7 @@ public class HazaredSpawning : MonoBehaviour
     {
         flyingSpeed = Random.Range(0.5f, 2.5f);
         flyingTime = Random.Range(3.5f, 5f);
-        float hazardScale = Random.Range(1f, 5f);
+        float hazardScale = Random.Range(SizeMin, SizeMax);
         transform.localScale = new Vector3(hazardScale, hazardScale, hazardScale);
         StartCoroutine(ObstacleMoveUp());
     }

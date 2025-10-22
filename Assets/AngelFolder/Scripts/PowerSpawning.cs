@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PowerSpawning : MonoBehaviour
 {
+    [Header("Fly Modifiers")]
     [SerializeField] float flyingSpeed = 3.5f;
     [SerializeField] float flyingTime = 3.5f;
     Vector3 movement;

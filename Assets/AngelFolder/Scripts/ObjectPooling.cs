@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class ObjectSpawningManager1 : MonoBehaviour
+public class ObjectPooling : MonoBehaviour
 {
-    [SerializeField] float spawnRate = 1;
-    [SerializeField] float spawnFrequency = 1;
-    [SerializeField] float spawnDelay = 1;
-    [SerializeField] float spawnTime = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

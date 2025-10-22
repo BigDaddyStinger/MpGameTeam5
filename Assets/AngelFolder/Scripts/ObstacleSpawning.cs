@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class ObstacleSpawning : MonoBehaviour
 {
+    [Header("Fly Modifiers")]
     [SerializeField] float flyingSpeed = 3.5f;
     [SerializeField] float flyingTime = 3.5f;
+    [Header("Size Modifiers")]
+    [SerializeField] float SizeMin = 1f;
+    [SerializeField] float SizeMax = 10f;
     Vector3 movement;
     private void Awake()
     {
