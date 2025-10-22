@@ -3,15 +3,20 @@ using UnityEngine;
 using UnityEngine.Events;
 public class ObjectSpawningManager : MonoBehaviour
 {
+    [Header("What Prefab To Spawn")]
     [SerializeField] GameObject ObjectToSpawn;
+    [Header("The Difficulty/Spawn Frequency")]
+    [Range(0,1)] public float DifficultyMult;
     [SerializeField] float spawnTime = 1;
-    [Range(0,1)] public float DifficultyMult; 
 
+    [Header("Spawn Object Away From Player (Z)")]
     [SerializeField] float spawnDistanceFromPlayerMin = 10;
     [SerializeField] float spawnDistanceFromPlayerMax = 30;
 
+    [Header("Spawn Object Below Player (Y)")]
     [SerializeField] float spawnBelowFromPlayer = -10;
 
+    [Header("Spawn Object In Front Of Player (X)")]
     [SerializeField] float spawnRangeFromPlayerMin = -50 ;
     [SerializeField] float spawnRangeFromPlayerMax = 50;
 
@@ -36,24 +41,10 @@ public class ObjectSpawningManager : MonoBehaviour
                     var pRotation = p.transform.rotation;
 
                     var pLocationOffSet = new Vector3(pLocation.x + Random.Range(spawnRangeFromPlayerMin, spawnRangeFromPlayerMax), pLocation.y + spawnBelowFromPlayer, pLocation.z + Random.Range(spawnDistanceFromPlayerMin, spawnDistanceFromPlayerMax));
-
-                    Instantiate(ObjectToSpawn, pLocationOffSet, pRotation);
+                    
+                    Instantiate(ObjectToSpawn, pLocationOffSet, Quaternion.identity);
                 }
             elapsed = 0;
-            }
-        }
-    }
-    
-    IEnumerator SpawnObject()
-    {
-        foreach (GameObject p in players)
-        {
-            if (p != null)
-            {
-                var pLocation = p.transform.position;
-                var pLocationOffSet = new Vector3(pLocation.x + Random.Range(spawnRangeFromPlayerMin, spawnRangeFromPlayerMax), pLocation.y - spawnBelowFromPlayer, pLocation.z + spawnDistanceFromPlayerMin);
-                yield return new WaitForSeconds(spawnTime);
-                Instantiate(ObjectToSpawn, pLocationOffSet, p.transform.rotation);
             }
         }
     }
