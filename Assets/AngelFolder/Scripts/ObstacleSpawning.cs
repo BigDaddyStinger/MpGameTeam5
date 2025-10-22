@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class ObjectSpawning : MonoBehaviour
+public class ObstacleSpawning : MonoBehaviour
 {
     [SerializeField] float flyingSpeed = 3.5f;
     [SerializeField] float flyingTime = 3.5f;
