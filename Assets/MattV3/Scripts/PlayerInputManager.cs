@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,7 +6,12 @@ public class PlayerInputManager : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Transform[] spawnPoints;
-    
+
+    //[SerializeField] CinemachineCamera p1Cam;
+    //[SerializeField] CinemachineCamera p2Cam;
+    //[SerializeField] CinemachineCamera p3Cam;
+    //[SerializeField] CinemachineCamera p4Cam;
+
     private bool wasdJoined = false;
     private bool arrowsJoined = false;
     private bool gamepad1Joined = false;
@@ -31,6 +37,8 @@ public class PlayerInputManager : MonoBehaviour
                 player.transform.position = spawnPoints[0].position;
             }
 
+            //p1Cam.Priority = 10;
+
             wasdJoined = true;
         }
 
@@ -45,6 +53,8 @@ public class PlayerInputManager : MonoBehaviour
                 player.transform.position = spawnPoints[1].position;
             }
 
+            //p2Cam.Priority = 8;
+
             arrowsJoined = true;
         }
 
@@ -56,6 +66,9 @@ public class PlayerInputManager : MonoBehaviour
                     controlScheme: "Gamepad",
                     pairWithDevice: gamePad);
             }
+
+            //p3Cam.Priority = 6;
+
             gamepad1Joined = true;
 
             if (gamePad.buttonSouth.wasPressedThisFrame && gamepad1Joined && !gamepad2Joined)
@@ -64,6 +77,8 @@ public class PlayerInputManager : MonoBehaviour
                     controlScheme: "Gamepad",
                     pairWithDevice: gamePad);
             }
+
+            //p4Cam.Priority = 4;
 
             gamepad2Joined = true;
         }

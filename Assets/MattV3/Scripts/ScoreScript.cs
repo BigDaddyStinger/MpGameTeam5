@@ -5,7 +5,7 @@ using Unity.Collections;
 public class ScoreScript : MonoBehaviour
 {
     [SerializeField] PlayerMovementV3 _playerScript;
-    [SerializeField] RankerScript _indScoreScript;
+    [SerializeField] GameManager _gameManager;
 
     [SerializeField] TextMeshProUGUI scoreTMP;
     [SerializeField] TextMeshProUGUI rankTMP;
@@ -21,10 +21,17 @@ public class ScoreScript : MonoBehaviour
 
     public void FixedUpdate()
     {
-        int currentScore = _playerScript.playerScore;
-        scoreTMP.text = currentScore.ToString();
+        if (_playerScript != null)
+        {
+            int currentScore = _playerScript.playerScore;
+            scoreTMP.text = currentScore.ToString();
+        }
 
-        rankTMP.text = _indScoreScript.currentRank.ToString();
+        if (_gameManager != null)
+        {
+            int currentRank = _gameManager.indCurrentRank;
+            rankTMP.text = currentRank.ToString();
+        }
     }
 
 }

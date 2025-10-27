@@ -15,6 +15,7 @@ public class PlayerMovementV3 : MonoBehaviour
     [SerializeField] float turnSpeed;
     [SerializeField] float turnRate;
     [SerializeField] float yawDeg;
+    [SerializeField] float animMagicSpeed;
 
     [SerializeField] bool jumpQueued;
     [SerializeField] bool isGrounded;
@@ -23,6 +24,8 @@ public class PlayerMovementV3 : MonoBehaviour
 
     [SerializeField] Rigidbody rb;
 
+    [SerializeField] Animator _anim;
+
     [SerializeField] LayerMask groundMask;
 
     [SerializeField] Vector3 currentPlanar;
@@ -30,6 +33,7 @@ public class PlayerMovementV3 : MonoBehaviour
     private void Awake()
     {
         if (!rb) rb = GetComponent<Rigidbody>();
+        if (!_anim) _anim = GetComponent<Animator>();
     }
 
 
@@ -86,6 +90,13 @@ public class PlayerMovementV3 : MonoBehaviour
         //========== Ground Check ==========//
 
         CheckGround();
+
+
+        //========== Animations ==========//
+
+        animMagicSpeed = currentPlanar.magnitude * 0.05f;
+
+        _anim.SetFloat("Speed", animMagicSpeed);
     }
 
     public void OnMove(InputAction.CallbackContext ctx)

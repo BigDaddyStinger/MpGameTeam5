@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject resultsPanel;
     [SerializeField] TMPro.TextMeshProUGUI resultsText;
 
+    [SerializeField] public int indCurrentRank = 0;
+
     readonly List<PlayerMovementV3> players = new();
     readonly HashSet<PlayerMovementV3> deadPlayers = new();
 
@@ -74,7 +76,7 @@ public class GameManager : MonoBehaviour
         if (rb) rb.isKinematic = true;
     }
     */
-    private void RecomputeRanks()
+    public void RecomputeRanks()
     {
         var sorted = players
             .OrderByDescending(p1 => p1.playerScore)
@@ -83,8 +85,15 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < sorted.Count; i++)
         {
-            var rankComp = sorted[i].GetComponent<RankerScript>();
-            if (rankComp) rankComp.currentRank = i + 1;
+            var rankComp = sorted[i].GetComponent<ScoreScript>();
+            if (rankComp)
+            {
+                indCurrentRank = i + 1;
+            }
+            else
+            {
+                return;
+            }
         }
     }
 
