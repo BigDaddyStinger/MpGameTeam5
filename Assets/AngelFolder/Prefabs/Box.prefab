@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3409011721048668658}
   - component: {fileID: 903134820787917135}
   m_Layer: 6
-  m_Name: Obstacle
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,10 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39945b175827b4044ba38511b87ecbf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingSpeed: 0
-  flyingTime: 3.5
+  flyingSpeedMin: 1
+  flyingSpeedMax: 2
+  flyingTimeMin: 1
+  flyingTimedMax: 2
   SizeMin: 1
   SizeMax: 10
+  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMax: 80
+  spawnBelowFromPlayer: -5
+  spawnRangeFromPlayerMin: -25
+  spawnRangeFromPlayerMax: 25
+  obstacleManagerCollective: {fileID: 0}
 --- !u!54 &3409011721048668658
 Rigidbody:
   m_ObjectHideFlags: 0
