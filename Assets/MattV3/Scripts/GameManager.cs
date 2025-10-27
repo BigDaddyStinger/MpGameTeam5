@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         if (!deadPlayers.Contains(p))
             deadPlayers.Add(p);
 
-        DisablePlayerControl(p);
+        //DisablePlayerControl(p);
 
         RecomputeRanks();
 
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     {
         RecomputeRanks();
     }
-
+    /*
     private void DisablePlayerControl(PlayerMovementV3 p)
     {
         var input = p.GetComponent<PlayerInput>();
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
         var rb = p.GetComponent<Rigidbody>();
         if (rb) rb.isKinematic = true;
     }
-
+    */
     private void RecomputeRanks()
     {
         var sorted = players
