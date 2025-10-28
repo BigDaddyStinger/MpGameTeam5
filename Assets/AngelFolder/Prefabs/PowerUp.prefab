@@ -92,8 +92,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc876b529fa934343844d84ef4fc2bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyingSpeed: 3.5
-  flyingTime: 3.5
+  flyingSpeedMin: 1
+  flyingSpeedMax: 3
+  flyingTimeMin: 1
+  flyingTimedMax: 3
+  SizeMin: 1
+  SizeMax: 1
+  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMax: 80
+  spawnBelowFromPlayer: -5
+  spawnRangeFromPlayerMin: -25
+  spawnRangeFromPlayerMax: 25
+  obstacleManagerCollective: {fileID: 0}
 --- !u!114 &1271040427100373609
 MonoBehaviour:
   m_ObjectHideFlags: 0

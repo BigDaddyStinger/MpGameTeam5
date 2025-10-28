@@ -7,10 +7,6 @@ TagManager:
   - Boost
   - Retard
   - Hazard
-<<<<<<< HEAD
-=======
-  - Coin
->>>>>>> MattStuff
   layers:
   - Default
   - TransparentFX
