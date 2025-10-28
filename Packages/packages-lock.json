@@ -29,7 +29,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
+<<<<<<< HEAD
       "version": "3.1.4",
+=======
+      "version": "3.1.5",
+>>>>>>> MattStuff
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -73,11 +77,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.23",
+      "version": "2.0.25",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.9"
+        "com.unity.test-framework": "1.1.31"
       },
       "url": "https://packages.unity.com"
     },
@@ -242,7 +246,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.7",
+      "version": "1.9.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {
