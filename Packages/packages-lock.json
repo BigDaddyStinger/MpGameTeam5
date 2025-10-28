@@ -29,11 +29,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-<<<<<<< HEAD
-      "version": "3.1.4",
-=======
       "version": "3.1.5",
->>>>>>> MattStuff
       "depth": 0,
       "source": "registry",
       "dependencies": {
