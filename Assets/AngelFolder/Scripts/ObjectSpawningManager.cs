@@ -48,6 +48,8 @@ public class ObjectSpawningManager : MonoBehaviour
             }
         }
     }
+
+
     void FindPlayers()
     {
         for (int i = 0; i < players.Length; i++)

@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4460912724355068078}
   - component: {fileID: 9113269917535376412}
   - component: {fileID: 5739716532033976796}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PlayerHudCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,17 +210,17 @@ Canvas:
   m_GameObject: {fileID: 2183211095064062810}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 5939838678200605173}
+  m_PlaneDistance: 1
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
+  m_UpdateRectTransformForStandalone: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_BlockingObjects: 3
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 7531982257217790369}
   - component: {fileID: 9057636765187200602}
   - component: {fileID: 6491453184697875277}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PlayerHudPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 3951174577177597203}
   - component: {fileID: 4898331630371450805}
   - component: {fileID: 5274716500841728909}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PlayerScoreTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 2747271971281038951}
   - component: {fileID: 5127643133406712309}
   - component: {fileID: 685588522262167713}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PlayerRankTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
