@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 8467405171909301608}
   - component: {fileID: 2531021190090182625}
   m_Layer: 0
-  m_Name: Hazard
+  m_Name: BadxHazard
   m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

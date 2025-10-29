@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 8527470879130119054}
   - component: {fileID: -818651728330464640}
   m_Layer: 0
-  m_Name: PowerDown
+  m_Name: BadxPowerDown
   m_TagString: Retard
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

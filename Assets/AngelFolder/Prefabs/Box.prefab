@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3409011721048668658}
   - component: {fileID: 903134820787917135}
   m_Layer: 6
-  m_Name: Box
+  m_Name: BadxBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

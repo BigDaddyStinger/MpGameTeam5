@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2578485413577083843}
   - component: {fileID: 6799252188411635686}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: BadxCoin
   m_TagString: Boost
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
