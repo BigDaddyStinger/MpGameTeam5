@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-public class ObstacleManagerScript : MonoBehaviour
+public class BadxObstacleManagerScript : MonoBehaviour
 {
     [Header("What Prefab To Spawn")]
     [SerializeField] GameObject ObjectToSpawn;
@@ -12,8 +12,8 @@ public class ObstacleManagerScript : MonoBehaviour
 
 
     [Header("References")]
-    [SerializeField] ObstaclePooling pool;
-    [SerializeField] ObstacleManagerCollective ObstacleManager;
+    [SerializeField] BadxObstaclePooling pool;
+    [SerializeField] BadxObstacleManagerCollective ObstacleManager;
 
     float elapsed = 0;
 

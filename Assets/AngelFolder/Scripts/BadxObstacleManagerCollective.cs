@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ObstacleManagerCollective : MonoBehaviour
+public class BadxObstacleManagerCollective : MonoBehaviour
 {
-    [SerializeField] public ObstacleManagerScript[] managers;
+    [SerializeField] public BadxObstacleManagerScript[] managers;
     [SerializeField] public GameObject[] players = new GameObject[4];
 
     private void Awake()

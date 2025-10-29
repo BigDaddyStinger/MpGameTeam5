@@ -148,8 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d04f122e267a44b788b3f1c799121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 8467405171909301608, guid: dc4e213d5d9ca0a4d8ee587f2aaf1282, type: 3}
-  amountOfObjects: 500
 --- !u!4 &50667542
 Transform:
   m_ObjectHideFlags: 0
@@ -330,8 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d04f122e267a44b788b3f1c799121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 8527470879130119054, guid: 1099adcb8ce2d7242881b24a3fc832e1, type: 3}
-  amountOfObjects: 500
 --- !u!1 &334933612
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,8 +480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d04f122e267a44b788b3f1c799121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 4050856982960052110, guid: 43f4713d514b7c043b9dbceb17c265d6, type: 3}
-  amountOfObjects: 500
 --- !u!1 &729227107
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,69 +524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d04f122e267a44b788b3f1c799121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 2578485413577083843, guid: 6d59750283dd98a41a993deeb553e81d, type: 3}
-  amountOfObjects: 500
---- !u!1001 &1028478550
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 483648899318280868, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_Name
-      value: PlayerV2
-      objectReference: {fileID: 0}
-    - target: {fileID: 483648899318280868, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 624244008037299891, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a2c2bbaf27d7738439c9e30facbf6a68, type: 3}
 --- !u!1 &1435057050
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,8 +738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d04f122e267a44b788b3f1c799121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 2105934048307061948, guid: d7375c661ef18ea4fa522a13f8f91fc7, type: 3}
-  amountOfObjects: 500
 --- !u!1 &1802857791
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,8 +795,16 @@ MonoBehaviour:
   ObjectToSpawn: {fileID: 1042144901076776744, guid: d7375c661ef18ea4fa522a13f8f91fc7, type: 3}
   DifficultyMult: 1
   spawnTime: 10
-  pool: {fileID: 1488622908}
-  ObstacleManager: {fileID: 1802857798}
+  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMax: 30
+  spawnBelowFromPlayer: -10
+  spawnRangeFromPlayerMin: -50
+  spawnRangeFromPlayerMax: 50
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1802857794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,8 +820,16 @@ MonoBehaviour:
   ObjectToSpawn: {fileID: 6333272979408167421, guid: 1099adcb8ce2d7242881b24a3fc832e1, type: 3}
   DifficultyMult: 1
   spawnTime: 10
-  pool: {fileID: 136157477}
-  ObstacleManager: {fileID: 1802857798}
+  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMax: 30
+  spawnBelowFromPlayer: -10
+  spawnRangeFromPlayerMin: -50
+  spawnRangeFromPlayerMax: 50
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1802857795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,8 +845,16 @@ MonoBehaviour:
   ObjectToSpawn: {fileID: 1755759984725155376, guid: 43f4713d514b7c043b9dbceb17c265d6, type: 3}
   DifficultyMult: 1
   spawnTime: 10
-  pool: {fileID: 440733025}
-  ObstacleManager: {fileID: 1802857798}
+  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMax: 30
+  spawnBelowFromPlayer: -10
+  spawnRangeFromPlayerMin: -50
+  spawnRangeFromPlayerMax: 50
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1802857796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,8 +870,16 @@ MonoBehaviour:
   ObjectToSpawn: {fileID: 3163165783762411042, guid: dc4e213d5d9ca0a4d8ee587f2aaf1282, type: 3}
   DifficultyMult: 1
   spawnTime: 10
-  pool: {fileID: 50667538}
-  ObstacleManager: {fileID: 1802857798}
+  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMax: 30
+  spawnBelowFromPlayer: -10
+  spawnRangeFromPlayerMin: -50
+  spawnRangeFromPlayerMax: 50
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1802857797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,8 +895,16 @@ MonoBehaviour:
   ObjectToSpawn: {fileID: 4279119243925870902, guid: 6d59750283dd98a41a993deeb553e81d, type: 3}
   DifficultyMult: 1
   spawnTime: 10
-  pool: {fileID: 729227109}
-  ObstacleManager: {fileID: 1802857798}
+  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMax: 30
+  spawnBelowFromPlayer: -10
+  spawnRangeFromPlayerMin: -50
+  spawnRangeFromPlayerMax: 50
+  players:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1802857798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,11 +918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   managers:
-  - {fileID: 1802857795}
-  - {fileID: 1802857796}
-  - {fileID: 1802857794}
-  - {fileID: 1802857793}
-  - {fileID: 1802857797}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   players:
   - {fileID: 0}
   - {fileID: 0}
@@ -967,4 +936,3 @@ SceneRoots:
   - {fileID: 112527720}
   - {fileID: 334933616}
   - {fileID: 1802857792}
-  - {fileID: 1028478550}

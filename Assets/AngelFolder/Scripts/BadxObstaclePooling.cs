@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclePooling : MonoBehaviour
+public class BadxObstaclePooling : MonoBehaviour
 {
 
-    [SerializeField] ObstacleSpawningScript objectPrefab;
+    [SerializeField] BadxObstacleSpawningScript objectPrefab;
     [SerializeField] int amountOfObjects;
 
-    Queue<ObstacleSpawningScript> remainingObjects = new Queue<ObstacleSpawningScript>();
+    Queue<BadxObstacleSpawningScript> remainingObjects = new Queue<BadxObstacleSpawningScript>();
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class ObstaclePooling : MonoBehaviour
         }
     }
 
-    public void AddToQueue(ObstacleSpawningScript b)
+    public void AddToQueue(BadxObstacleSpawningScript b)
     {
         remainingObjects.Enqueue(b);
     }

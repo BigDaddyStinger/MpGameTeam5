@@ -1,7 +1,8 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class DisableTimer : MonoBehaviour
+public class BadxDisableTimerScript : MonoBehaviour
 {
     [Header("Disable Time Standard")]
     [SerializeField] float disableTime;
@@ -10,8 +11,7 @@ public class DisableTimer : MonoBehaviour
     [SerializeField] bool doRandomTime;
     [SerializeField] float disableTimeRandomMin;
     [SerializeField] float disableTimeRandomMax;
-
-    void Start()
+    private void OnEnable()
     {
         StartCoroutine(DisableObject());
     }

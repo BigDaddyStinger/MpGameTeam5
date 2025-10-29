@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-public class ObjectSpawningManager : MonoBehaviour
+public class BadxObjectSpawningManager : MonoBehaviour
 {
     [Header("What Prefab To Spawn")]
     [SerializeField] GameObject ObjectToSpawn;

@@ -1,14 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class HazaredSpawning : MonoBehaviour
+public class BadxPowerSpawning : MonoBehaviour
 {
     [Header("Fly Modifiers")]
     [SerializeField] float flyingSpeed = 3.5f;
     [SerializeField] float flyingTime = 3.5f;
-    [Header("Size Modifiers")]
-    [SerializeField] float SizeMin = 1f;
-    [SerializeField] float SizeMax = 5f;
     Vector3 movement;
     private void Awake()
     {
@@ -20,10 +17,8 @@ public class HazaredSpawning : MonoBehaviour
     }
     private void OnEnable()
     {
-        flyingSpeed = Random.Range(0.5f, 2.5f);
-        flyingTime = Random.Range(3.5f, 5f);
-        float hazardScale = Random.Range(SizeMin, SizeMax);
-        transform.localScale = new Vector3(hazardScale, hazardScale, hazardScale);
+        flyingSpeed = Random.Range(1.5f, 3.5f);
+        flyingTime = Random.Range(1.5f, 3f);
         StartCoroutine(ObstacleMoveUp());
     }
     IEnumerator ObstacleMoveUp()

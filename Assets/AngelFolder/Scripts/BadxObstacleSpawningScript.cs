@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class ObstacleSpawningScript : MonoBehaviour
+public class BadxObstacleSpawningScript : MonoBehaviour
 {
     [Header("Fly Modifiers")]
     float flyingSpeed;
@@ -27,13 +27,13 @@ public class ObstacleSpawningScript : MonoBehaviour
     [SerializeField] float spawnRangeFromPlayerMax = 50;
 
     //References 
-    [SerializeField] ObstacleManagerCollective obstacleManagerCollective;
-    ObstaclePooling pool;
+    [SerializeField] BadxObstacleManagerCollective obstacleManagerCollective;
+    BadxObstaclePooling pool;
 
     Vector3 locationToSpawnObstacle;
     private void Awake()
     {
-        obstacleManagerCollective = FindAnyObjectByType<ObstacleManagerCollective>();
+        obstacleManagerCollective = FindAnyObjectByType<BadxObstacleManagerCollective>();
 
     }
     private void OnDisable()
@@ -66,13 +66,13 @@ public class ObstacleSpawningScript : MonoBehaviour
         flyingTime = Random.Range(flyingTimeMin, flyingTimedMax);
         transform.localScale = new Vector3(Random.Range(SizeMin, SizeMax), Random.Range(SizeMin, SizeMax), Random.Range(SizeMin, SizeMax));
     }
-    public void SetPool(ObstaclePooling bp)
+    public void SetPool(BadxObstaclePooling bp)
     {
         pool = bp;
     }
     public void SetSpawnLocation()
     {
-        foreach (ObstacleManagerScript m in obstacleManagerCollective.managers)
+        foreach (BadxObstacleManagerScript m in obstacleManagerCollective.managers)
         {
             foreach (GameObject p in obstacleManagerCollective.players)
             {

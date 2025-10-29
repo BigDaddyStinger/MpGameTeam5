@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class ObstacleSpawning : MonoBehaviour
+public class BadxObstacleSpawning : MonoBehaviour
 {
     [Header("Fly Modifiers")]
     [SerializeField] float flyingSpeed = 3.5f;
