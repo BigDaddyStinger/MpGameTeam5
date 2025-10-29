@@ -3,15 +3,21 @@ using UnityEngine.Events;
 
 public class AddPlayerToArrayScript : MonoBehaviour
 {
-    [SerializeField] UnityEvent AddPlayerToArrayEvent;
+    [SerializeField] ObstacleManagerCollective obstacleManagerCollective;
+    [SerializeField] GameObject playerReference; 
     private void Awake()
     {
-        Debug.Log("Player Spawned (Awake)");
-        AddPlayerToArrayEvent?.Invoke();        
+        obstacleManagerCollective = FindAnyObjectByType<ObstacleManagerCollective>();
+        playerReference = gameObject;
     }
     private void Start()
     {
         Debug.Log("Player Spawned (Start)");
-        AddPlayerToArrayEvent?.Invoke();
+        SendPlayerReference();
+    }
+    void SendPlayerReference()
+    {
+        Debug.Log("Send Player Reference to Obstacle Manager Collective");
+        obstacleManagerCollective.AddPlayer(playerReference);
     }
 }

@@ -830,8 +830,16 @@ PrefabInstance:
       value: ObstacleSpawnerManger
       objectReference: {fileID: 0}
     - target: {fileID: 4334181092341766909, guid: de6c544e6f753d047b27f45361f24641, type: 3}
+      propertyPath: playerIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334181092341766909, guid: de6c544e6f753d047b27f45361f24641, type: 3}
       propertyPath: players.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334181092341766909, guid: de6c544e6f753d047b27f45361f24641, type: 3}
+      propertyPath: 'players.Array.data[0]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4334181092341766909, guid: de6c544e6f753d047b27f45361f24641, type: 3}
       propertyPath: 'players.Array.data[1]'
@@ -1054,7 +1062,7 @@ Transform:
   m_GameObject: {fileID: 551341885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8814383, y: 0.74671555, z: -13.458775}
+  m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
