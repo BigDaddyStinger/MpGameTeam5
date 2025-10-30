@@ -7,6 +7,9 @@ public class ObstaclePooling : MonoBehaviour
     [SerializeField] ObstacleSpawningScript objectPrefab;
     [SerializeField] int amountOfObjects;
 
+    // Matt adding things
+    [SerializeField] private ObstacleManagerCollective manager;
+
     Queue<ObstacleSpawningScript> remainingObjects = new Queue<ObstacleSpawningScript>();
 
     // Start is called before the first frame update
@@ -22,12 +25,27 @@ public class ObstaclePooling : MonoBehaviour
 
     public void SpawnObject(/*Vector3 spawnLocation*/)
     {
+        if(remainingObjects.Count > 0 )
+        {
+            var current = remainingObjects.Dequeue();
+            if(manager != null)
+            {
+                Transform target = manager.PickPlayerByScoreWeight();
+                current.SetTarget(target);
+            }
+
+            current.gameObject.SetActive(true);
+        }
+
+
+        /* Commenting Out for DIrector weighting.
         if (remainingObjects.Count > 0)
         {
             var current = remainingObjects.Dequeue();
             current.gameObject.SetActive(true);
             //current.transform.position = spawnLocation;
         }
+        */
     }
 
     public void AddToQueue(ObstacleSpawningScript b)

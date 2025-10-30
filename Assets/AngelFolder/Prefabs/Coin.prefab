@@ -100,8 +100,8 @@ GameObject:
   - component: {fileID: 2578485413577083843}
   - component: {fileID: 6799252188411635686}
   m_Layer: 0
-  m_Name: BadxCoin
-  m_TagString: Boost
+  m_Name: Coin
+  m_TagString: Coin
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,17 +178,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyingSpeedMin: 1
-  flyingSpeedMax: 3
+  flyingSpeedMax: 4
   flyingTimeMin: 1
   flyingTimedMax: 3
   SizeMin: 1
   SizeMax: 1
-  spawnDistanceFromPlayerMin: 10
-  spawnDistanceFromPlayerMax: 80
-  spawnBelowFromPlayer: -5
+  spawnDistanceFromPlayerMin: 2
+  spawnDistanceFromPlayerMax: 30
+  spawnBelowFromPlayer: -1
   spawnRangeFromPlayerMin: -25
   spawnRangeFromPlayerMax: 25
   obstacleManagerCollective: {fileID: 0}
+  targetPlayer: {fileID: 0}
 --- !u!114 &6799252188411635686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc246c237b733e5458801db3b9184d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableTime: 0
+  disableTime: 5
   doRandomTime: 1
   disableTimeRandomMin: 3
-  disableTimeRandomMax: 4
+  disableTimeRandomMax: 8

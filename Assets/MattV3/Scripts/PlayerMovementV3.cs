@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,6 +30,10 @@ public class PlayerMovementV3 : MonoBehaviour
     [SerializeField] LayerMask groundMask;
 
     [SerializeField] Vector3 currentPlanar;
+
+    [SerializeField] TextMeshProUGUI rankText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    public int CurrentRank { get; private set; } = -1;
 
     private void Awake()
     {
@@ -97,6 +102,11 @@ public class PlayerMovementV3 : MonoBehaviour
         animMagicSpeed = currentPlanar.magnitude * 0.05f;
 
         _anim.SetFloat("Speed", animMagicSpeed);
+
+
+        //======= Set Score =======//
+
+        scoreText.text = playerScore.ToString();
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -128,8 +138,54 @@ public class PlayerMovementV3 : MonoBehaviour
         if (GameManager.Instance) GameManager.Instance.NotifyScoreChanged();
     }
 
+    public void SetRank(int rank)
+    {
+        CurrentRank = rank;
+        UpdateRankUI();
+    }
 
+    public void UpdateRankUI()
+    {
+        if (!rankText) return;
+        rankText.text = $"Rank: {Ordinal(CurrentRank)}";
+    }
 
+    static string Ordinal(int n)
+    {
+        if (n <= 0) return "-";
+        int r100 = n % 100;
+        if (r100 is 11 or 12 or 13) return $"{n}th";
+        return (n % 10) switch
+        {
+            1 => $"{n}st",
+            2 => $"{n}nd",
+            3 => $"{n}rd",
+            _ => $"{n}th"
+        };
+    }
+
+    public void RetardSpeed()
+    {
+        float currentSpeed = moveSpeed;
+        float retardSpeed = currentSpeed * 0.5f;
+        moveSpeed = retardSpeed;
+        SpeedTimer();
+        moveSpeed = currentSpeed;
+    }
+
+    public void BoostSpeed()
+    {
+        float currentSpeed = moveSpeed;
+        float retardSpeed = currentSpeed * 1.5f;
+        moveSpeed = retardSpeed;
+        SpeedTimer();
+        moveSpeed = currentSpeed;
+    }
+
+    IEnumerator SpeedTimer()
+    {
+        yield return new WaitForSeconds(3);
+    }
 
 
     public void OnTriggerEnter(Collider other)
@@ -147,16 +203,21 @@ public class PlayerMovementV3 : MonoBehaviour
         {
             Debug.Log("Hitting Hazard");
             if (GameManager.Instance) GameManager.Instance.NotifyPlayerDied(this);
+            Destroy(gameObject);
         }
 
         else if (other.gameObject.CompareTag("Retard"))
         {
             Debug.Log("Hitting Retard");
+            RetardSpeed();
+            Destroy(other.gameObject);
         }
 
         else if (other.gameObject.CompareTag("Boost"))
         {
             Debug.Log("Hitting Boost");
+            BoostSpeed();
+            Destroy(other.gameObject);
         }
     }
 }

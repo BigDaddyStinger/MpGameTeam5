@@ -82,7 +82,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &3537576967316860218
@@ -98,14 +98,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 0
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
@@ -173,7 +173,6 @@ GameObject:
   - component: {fileID: 5114863847651602671}
   - component: {fileID: 4460912724355068078}
   - component: {fileID: 9113269917535376412}
-  - component: {fileID: 5739716532033976796}
   m_Layer: 5
   m_Name: PlayerHudCanvas
   m_TagString: Untagged
@@ -210,15 +209,15 @@ Canvas:
   m_GameObject: {fileID: 2183211095064062810}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 5939838678200605173}
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -260,26 +259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_BlockingObjects: 3
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &5739716532033976796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2183211095064062810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf4e6f9823d7f740bdfe6b09b7a73ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerScript: {fileID: 4666927419453617727}
-  _gameManager: {fileID: 0}
-  scoreTMP: {fileID: 5274716500841728909}
-  rankTMP: {fileID: 685588522262167713}
+    m_Bits: 0
 --- !u!1 &3686147315654750968
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Priority:
-    Enabled: 0
+    Enabled: 1
     m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
@@ -800,7 +783,6 @@ GameObject:
   - component: {fileID: 2428090135134783227}
   - component: {fileID: 4666927419453617727}
   - component: {fileID: 8653723414380648238}
-  - component: {fileID: 6644876514157436198}
   - component: {fileID: -6302375142684063736}
   m_Layer: 0
   m_Name: PlayerV3
@@ -963,6 +945,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   currentPlanar: {x: 0, y: 0, z: 0}
+  rankText: {fileID: 685588522262167713}
+  scoreText: {fileID: 5274716500841728909}
 --- !u!114 &8653723414380648238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,22 +1013,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 5939838678200605173}
---- !u!114 &6644876514157436198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8710688809656211850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf4e6f9823d7f740bdfe6b09b7a73ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerScript: {fileID: 4666927419453617727}
-  _gameManager: {fileID: 0}
-  scoreTMP: {fileID: 5274716500841728909}
-  rankTMP: {fileID: 685588522262167713}
 --- !u!114 &-6302375142684063736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,21 +1025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a72566ea17ab5419646ad716e61fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AddPlayerToArrayEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4334181092341766909, guid: de6c544e6f753d047b27f45361f24641, type: 3}
-        m_TargetAssemblyTypeName: ObstacleManagerCollective, Assembly-CSharp
-        m_MethodName: FindPlayers
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  obstacleManagerCollective: {fileID: 0}
+  playerReference: {fileID: 0}
 --- !u!1001 &6834577608887490324
 PrefabInstance:
   m_ObjectHideFlags: 0

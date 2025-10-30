@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -27,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void OnPlayerJoined(PlayerInput pi)
@@ -45,14 +44,14 @@ public class GameManager : MonoBehaviour
         }
 
         p.gameObject.name = $"Player_{players.Count}";
+
+        RecomputeRanks();
     }
 
     public void NotifyPlayerDied(PlayerMovementV3 p)
     {
         if (!deadPlayers.Contains(p))
             deadPlayers.Add(p);
-
-        //DisablePlayerControl(p);
 
         RecomputeRanks();
 
@@ -67,17 +66,43 @@ public class GameManager : MonoBehaviour
     {
         RecomputeRanks();
     }
-    /*
-    private void DisablePlayerControl(PlayerMovementV3 p)
-    {
-        var input = p.GetComponent<PlayerInput>();
-        if (input) input.DeactivateInput();
-        var rb = p.GetComponent<Rigidbody>();
-        if (rb) rb.isKinematic = true;
-    }
-    */
+
     public void RecomputeRanks()
     {
+        if(players.Count == 0) return;
+
+        var sorted = players
+            .OrderByDescending(p1 => p1.playerScore)
+            .ThenBy(p1 => players.IndexOf(p1))
+            .ToList();
+
+        int[] ranks = new int[sorted.Count];
+        int currentRank = 1;
+        ranks[0] = currentRank;
+
+        for (int i = 1; i < sorted.Count; i++)
+        {
+            if (sorted[i].playerScore == sorted[i - 1].playerScore)
+            {
+                ranks[i] = currentRank;
+            }
+            else
+            {
+                ranks[i] = currentRank = i + 1;
+            }
+        }
+
+        for (int i = 0; i < sorted.Count; i++)
+        {
+            sorted[i].SetRank(ranks[i]);
+        }
+
+        indCurrentRank = ranks[sorted.Count - 1];
+
+
+        /* Commented out for new compute attempt.
+         * 
+         * 
         var sorted = players
             .OrderByDescending(p1 => p1.playerScore)
             .ThenBy(p1 => players.IndexOf(p1))
@@ -95,10 +120,44 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
+        */
     }
 
-    private void ShowResults()
+    void ShowResults()
     {
+        var sorted = players
+            .OrderByDescending(p1 => p1.playerScore)
+            .ThenBy(p1 => players.IndexOf (p1))
+            .ToList();
+
+        if (resultsPanel)
+        {
+            resultsPanel.SetActive(true);
+        }    
+
+        if (resultsText)
+        {
+
+            /* Commented out to avoid crash
+             
+            System.Text.StringBuilder sb = new();
+            sb.AppendLine("FinalResults");
+            int rank = 1;
+            for (int i = 0; i < sorted.Count; i++)
+            {
+                if (i > 0 && sorted[i].playerScore != sorted[i - 1].playerScore)
+                {
+                    rank = i + 1;
+                }
+
+                sb.AppendLine($"{rank}. {sorted[i].name} - {sorted[i].playerScore} pts");
+            }
+            */
+
+            resultsText.text = "Game Over";
+        }
+
+        /* Commented to save for new attempt
         var sorted = players
             .OrderByDescending(p1 => p1.playerScore)
             .ThenBy(p1 => players.IndexOf(p1))
@@ -115,7 +174,34 @@ public class GameManager : MonoBehaviour
                 sb.AppendLine($"{i + 1}. {sorted[i].name} - {sorted[i].playerScore} pts");
             }
             resultsText.text = sb.ToString();
+        } */
+    }
+
+    public int GetRankOf(PlayerMovementV3 player)
+    {
+        var sorted = players
+            .OrderByDescending(p1 => p1.playerScore)
+            .ThenBy(p1 => players.IndexOf(p1))
+            .ToList();
+
+        int idx = sorted.IndexOf(player);
+        if (idx < 0) return -1;
+
+        int rank = 1;
+        for (int i = 0; i < sorted.Count; i++)
+        {
+            if (i > 0 && sorted[i].playerScore != sorted[i - 1].playerScore)
+            {
+                rank = i + 1;
+            }
+
+            if (sorted[i] == player)
+            {
+                return rank;
+            }
         }
+
+        return -1;
     }
 
     private IEnumerator RestartAfterDelay(float seconds)
@@ -124,7 +210,5 @@ public class GameManager : MonoBehaviour
         Instance = null;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-
 
 }

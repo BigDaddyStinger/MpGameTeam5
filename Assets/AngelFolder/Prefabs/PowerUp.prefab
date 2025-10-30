@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2105934048307061948}
   - component: {fileID: 1271040427100373609}
   m_Layer: 0
-  m_Name: BadxPowerUp
+  m_Name: PowerUp
   m_TagString: Boost
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -98,12 +98,13 @@ MonoBehaviour:
   flyingTimedMax: 3
   SizeMin: 1
   SizeMax: 1
-  spawnDistanceFromPlayerMin: 10
+  spawnDistanceFromPlayerMin: 2
   spawnDistanceFromPlayerMax: 80
-  spawnBelowFromPlayer: -5
+  spawnBelowFromPlayer: -1
   spawnRangeFromPlayerMin: -25
   spawnRangeFromPlayerMax: 25
   obstacleManagerCollective: {fileID: 0}
+  targetPlayer: {fileID: 0}
 --- !u!114 &1271040427100373609
 MonoBehaviour:
   m_ObjectHideFlags: 0
